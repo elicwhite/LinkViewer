@@ -1,0 +1,25 @@
+{
+  "name": "Quick Link Previews",
+  "short_name": "Quick Link Preview",
+  "version": "0.1",
+  "manifest_version": 2,
+  "permissions": [
+    "tabs", "contentSettings", "http://*/*"
+  ],
+
+  "content_scripts": [{
+    "matches": ["*://*/*"],
+    "css": [
+      "css.css"
+    ],
+    "js": [
+      "script.js"
+    ],
+    "run_at": "document_end"
+  }],
+
+  "web_accessible_resources": [
+    "frame.html",
+    "iframe.js"
+  ]
+}
