@@ -3,7 +3,7 @@
 function init() {
 
   var frame = document.createElement("iframe");
-  frame.src = chrome.extension.getURL("frame.html");
+  frame.src = chrome.extension.getURL("frame/index.html");
   frame.id = "qLinkPreview";
   document.body.appendChild(frame);
 
@@ -12,7 +12,7 @@ function init() {
     var timer = null;
 
     function leaveListener() {
-      if (timer == null) {
+      if (timer === null) {
         frame.classList.remove("visible");
       } else {
         window.clearTimeout(timer);

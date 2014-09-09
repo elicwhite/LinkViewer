@@ -19,7 +19,7 @@
   }],
 
   "web_accessible_resources": [
-    "frame.html",
-    "iframe.js"
+    "frame/index.html",
+    "frame/script.js"
   ]
 }
