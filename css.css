@@ -1,6 +1,7 @@
 #qLinkPreview {
-  height: 200px;
+  height: 100px;
   width: 100%;
+  margin: 0;
 
   position: fixed;
   bottom: 0;
@@ -10,4 +11,11 @@
 
   left: 0;
   right: 0;
+  transition: .5s;
+
+  transform: translateY(110px);
+}
+
+#qLinkPreview.visible {
+ transform: translateY(0px);
 }

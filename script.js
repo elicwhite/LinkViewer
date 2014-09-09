@@ -9,11 +9,32 @@ function init() {
 
 
   document.addEventListener("mouseover", function(e) {
-    if (e.target.tagName == "A") {
+    var timer = null;
 
-      frame.contentWindow.postMessage({
-        url: e.target.href
-      }, "*");
+    function leaveListener() {
+      if (timer == null) {
+        frame.classList.remove("visible");
+      } else {
+        window.clearTimeout(timer);
+      }
+
+      e.target.removeEventListener("mouseout", leaveListener);
+    }
+
+    if (e.target.tagName == "A") {
+      timer = window.setTimeout(function() {
+        timer = null;
+
+        frame.contentWindow.postMessage({
+          url: e.target.href
+        }, "*");
+
+        frame.classList.add("visible");
+      }, 500);
+
+
+
+      e.target.addEventListener("mouseout", leaveListener);
     }
   });
 
