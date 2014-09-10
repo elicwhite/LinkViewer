@@ -1,16 +1,36 @@
 "use strict";
 
-
 window.addEventListener("message", receiveMessage, false);
+
+var hostNames = {
+  "www.producthunt.com": {
+    "/l": ProductHuntViewer
+  }
+};
+
+function resolveViewer(a) {
+
+
+  var paths = hostNames[a.hostname];
+
+  if (paths) {
+    for (var path in paths) {
+      if (a.pathname.indexOf(path) === 0) {
+        return paths[path];
+      }
+    }
+  }
+
+  return DefaultViewer;
+}
 
 function receiveMessage(event) {
   var url = event.data.url;
+  var a = document.createElement("A");
+  a.href = url;
 
-  var ele = document.getElementById("url");
-
-  getPage(url).then(function(response) {
-    ele.textContent = response.title;
-  });
+  var viewer = resolveViewer(a);
+  viewer(a);
 }
 
 
@@ -40,4 +60,12 @@ function getPage(url) {
 
     request.send();
   });
+}
+
+function ProductHuntViewer(url) {
+  console.log("viwing producthunt", url.href);
+}
+
+function DefaultViewer(url) {
+  console.log("Viewing default", url.href);
 }
