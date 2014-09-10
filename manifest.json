@@ -10,16 +10,17 @@
   "content_scripts": [{
     "matches": ["*://*/*"],
     "css": [
-      "css.css"
+      "build/ext-css.css"
     ],
     "js": [
-      "script.js"
+      "build/ext.js"
     ],
     "run_at": "document_end"
   }],
 
   "web_accessible_resources": [
-    "frame/index.html",
-    "frame/script.js"
+    "build/frame/index.html",
+    "build/frame/main.js",
+    "build/frame/total.css"
   ]
 }

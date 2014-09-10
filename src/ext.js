@@ -3,7 +3,7 @@
 function init() {
 
   var frame = document.createElement("iframe");
-  frame.src = chrome.extension.getURL("frame/index.html");
+  frame.src = chrome.extension.getURL("build/frame/index.html");
   frame.id = "qLinkPreview";
   document.body.appendChild(frame);
 
@@ -25,7 +25,7 @@ function init() {
       element.removeEventListener("mouseout", leaveListener);
     }
 
-    if (element) {
+    if (element && element.href) {
       timer = window.setTimeout(function() {
         timer = null;
 
@@ -35,8 +35,6 @@ function init() {
 
         frame.classList.add("visible");
       }, 500);
-
-
 
       element.addEventListener("mouseout", leaveListener);
     }
@@ -58,8 +56,6 @@ function init() {
 
     return aInChain(element.parentNode, counter--);
   }
-
-
 }
 
 if (document.readyState === "interactive" || document.readyState === "complete") {
