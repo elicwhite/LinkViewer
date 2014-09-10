@@ -9,8 +9,6 @@ var hostNames = {
 };
 
 function resolveViewer(a) {
-
-
   var paths = hostNames[a.hostname];
 
   if (paths) {
@@ -32,6 +30,25 @@ function receiveMessage(event) {
   var viewer = resolveViewer(a);
   viewer(a);
 }
+
+function ProductHuntViewer(url) {
+  console.log("viwing producthunt", url.href);
+
+  var template = getTemplate("producthunt");
+  template.getElementsByClassName("title")[0].textContent = url.href;
+
+  applyTemplate(template);
+}
+
+function DefaultViewer(url) {
+  console.log("Viewing default", url.href);
+
+  var template = getTemplate("default");
+  template.getElementsByClassName("hostname")[0].textContent = url.hostname;
+
+  applyTemplate(template);
+}
+
 
 
 function getPage(url) {
@@ -62,10 +79,15 @@ function getPage(url) {
   });
 }
 
-function ProductHuntViewer(url) {
-  console.log("viwing producthunt", url.href);
+function getTemplate(templateName) {
+  var script = document.getElementById("template-"+templateName);
+  var element = document.createElement("div");
+  element.innerHTML = script.innerHTML;
+  return element;
 }
 
-function DefaultViewer(url) {
-  console.log("Viewing default", url.href);
+function applyTemplate(template) {
+  var content = document.getElementById("content");
+  content.innerHTML = template.innerHTML;
 }
+
