@@ -3,7 +3,7 @@
 function init() {
 
   var frame = document.createElement("iframe");
-  frame.src = chrome.extension.getURL("build/frame/index.html");
+  frame.src = chrome.extension.getURL("frame/index.html");
   frame.id = "qLinkPreview";
   document.body.appendChild(frame);
 

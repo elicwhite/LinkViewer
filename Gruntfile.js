@@ -50,6 +50,11 @@ module.exports = function(grunt) {
       frameJs: {
         files: ['src/frame/scripts/**/*.js', 'src/frame/scripts/**/*.hbs'],
         tasks: ['browserify'],
+      },
+
+      extManifest: {
+        files: 'src/manifest.json',
+        tasks: ['copy:extManifest']
       }
     },
 
@@ -62,6 +67,11 @@ module.exports = function(grunt) {
       extJs: {
         src: 'src/ext.js',
         dest: 'build/ext.js'
+      },
+
+      extManifest: {
+        src: 'src/manifest.json',
+        dest: 'build/manifest.json'
       }
     },
 

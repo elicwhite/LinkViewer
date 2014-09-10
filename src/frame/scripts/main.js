@@ -1,6 +1,5 @@
 "use strict";
 
-// var ImgurViewer = require("./viewers/imgur/imgur.js");
 var DefaultViewer = require("./viewers/default/default.js");
 var ImgurViewer = require("./viewers/imgur/imgur.js");
 var ProductHuntViewer = require("./viewers/productHunt/productHunt.js");
