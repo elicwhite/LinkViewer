@@ -6,15 +6,19 @@
   }
 
     body {
-      width: 100%;
-      height: 100%;
       background-color: white;
       font-family: sans-serif;
       line-height: 150%;
-      padding: 10px;
       font-size: 14px;
       color: rgba(0,0,0,.87);
-      background-color: white;
+    }
+
+    #content, #loading {
+      position: absolute;
+            left: 10px;
+      right: 10px;
+      top: 10px;
+      bottom: 10px;
     }
 
     .title {
@@ -26,19 +30,41 @@
       color: rgba(0,0,0,.54);
       margin-left: 10px;
     }
+
+    #loading {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /*height: 100%;*/
+
+      transition: opacity 0s;
+      opacity: 1;
+    }
+
+    #loading.hidden {
+      transition: opacity .2s;
+      opacity: 0;
+    }
   </style>
 
   <script src="script.js"></script>
 </head>
 <body>
-  <div id="content">
+  <div id="content"></div>
+  <div id="loading">
+    Loading
   </div>
 
+  <script id="template-imgur">
+    <ul class="images">
+    </ul>
+  </script>
   <script id="template-producthunt">
     <div class="title"></div>
   </script>
   <script id="template-default">
-    <span class="title">Jquery Ajax error handling to ignore aborted - Stack Overflow</span>
-    <span class="hostName">stackoverflow.com</span>
+    <span class="title"></span>
+    <span class="hostName"></span>
   </script>
 </body>

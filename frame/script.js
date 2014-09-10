@@ -5,6 +5,9 @@ window.addEventListener("message", receiveMessage, false);
 var hostNames = {
   "www.producthunt.com": {
     "/l": ProductHuntViewer
+  },
+  "imgur.com": {
+    "/a": ImgurViewer
   }
 };
 
@@ -28,12 +31,35 @@ function receiveMessage(event) {
   a.href = url;
 
   var viewer = resolveViewer(a);
-  viewer(a);
+
+  displayViewer(viewer, a);
+}
+
+function ImgurViewer(url) {
+  if (url.href.indexOf("?gallery") === -1) {
+    url.href+="?gallery";
+  }
+
+  getPage(url).then(function(page) {
+    // debugger;
+    var template = getTemplate("imgur");
+
+    var urls = [];
+
+    var images = page.getElementsByClassName("thumb-title");
+
+    for (var i = 0; i < images.length; i++) {
+      urls.push('<img src="'+url.scheme+images[i].dataset.src+'" />');
+    }
+
+    var ul = template.getElementsByClassName("images")[0];
+    ul.innerHTML = "<li>"+urls.join("</li><li>")+"</li>";
+
+    applyTemplate(template);
+  });
 }
 
 function ProductHuntViewer(url) {
-  console.log("viwing producthunt", url.href);
-
   var template = getTemplate("producthunt");
   template.getElementsByClassName("title")[0].textContent = url.href;
 
@@ -41,15 +67,15 @@ function ProductHuntViewer(url) {
 }
 
 function DefaultViewer(url) {
-  console.log("Viewing default", url.href);
+  getPage(url.href).then(function(page) {
+    var template = getTemplate("default");
 
-  var template = getTemplate("default");
-  template.getElementsByClassName("hostname")[0].textContent = url.hostname;
+    template.getElementsByClassName("title")[0].textContent = page.title;
+    template.getElementsByClassName("hostname")[0].textContent = url.hostname;
 
-  applyTemplate(template);
+    applyTemplate(template);
+  });
 }
-
-
 
 function getPage(url) {
   return new Promise(function(resolve, reject) {
@@ -80,14 +106,23 @@ function getPage(url) {
 }
 
 function getTemplate(templateName) {
-  var script = document.getElementById("template-"+templateName);
+  var script = document.getElementById("template-" + templateName);
   var element = document.createElement("div");
   element.innerHTML = script.innerHTML;
   return element;
 }
 
+
+function displayViewer(viewer, a) {
+  // Display loading
+  document.getElementById("loading").classList.remove("hidden");
+  viewer(a);
+}
+
+
 function applyTemplate(template) {
   var content = document.getElementById("content");
   content.innerHTML = template.innerHTML;
-}
 
+  document.getElementById("loading").classList.add("hidden");
+}
