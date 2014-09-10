@@ -12,6 +12,9 @@ function init() {
   document.addEventListener("mouseover", function(e) {
     var timer = null;
 
+    // We want to resolve either this tag or a couple tags up the chain
+    var element = aInChain(e.target);
+
     function leaveListener() {
       if (timer === null) {
         frame.classList.remove("visible");
@@ -19,15 +22,15 @@ function init() {
         window.clearTimeout(timer);
       }
 
-      e.target.removeEventListener("mouseout", leaveListener);
+      element.removeEventListener("mouseout", leaveListener);
     }
 
-    if (e.target.tagName == "A") {
+    if (element) {
       timer = window.setTimeout(function() {
         timer = null;
 
         frame.contentWindow.postMessage({
-          url: e.target.href
+          url: element.href
         }, "*");
 
         frame.classList.add("visible");
@@ -35,9 +38,26 @@ function init() {
 
 
 
-      e.target.addEventListener("mouseout", leaveListener);
+      element.addEventListener("mouseout", leaveListener);
     }
   });
+
+  function aInChain(element, counter) {
+    if (!element || counter === 0) {
+      return false;
+    }
+
+    if (element.tagName == "A") {
+      return element;
+    }
+
+    // If we haven't set a counter, start it at 4
+    if (!counter) {
+      counter = 4;
+    }
+
+    return aInChain(element.parentNode, counter--);
+  }
 
 
 }
