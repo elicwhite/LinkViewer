@@ -7,8 +7,6 @@ function init() {
   frame.id = "qLinkPreview";
   document.body.appendChild(frame);
 
-
-
   document.addEventListener("mouseover", function(e) {
     var timer = null;
 
@@ -27,13 +25,11 @@ function init() {
 
     if (element && element.href) {
       timer = window.setTimeout(function() {
-        timer = null;
-
-        frame.contentWindow.postMessage({
-          url: element.href
-        }, "*");
-
-        frame.classList.add("visible");
+        sendUrl(element.href)
+        .then(function() {
+          timer = null;
+          frame.classList.add("visible");
+        });
       }, 500);
 
       element.addEventListener("mouseout", leaveListener);
@@ -55,6 +51,26 @@ function init() {
     }
 
     return aInChain(element.parentNode, counter--);
+  }
+
+  function sendUrl(url) {
+    return new Promise(function(resolve, reject) {
+      function gotMessage(event) {
+        if (event.data.hasViewer) {
+          resolve();
+        } else {
+          reject();
+        }
+
+        window.removeEventListener("message", gotMessage);
+      }
+
+      window.addEventListener("message", gotMessage);
+
+      frame.contentWindow.postMessage({
+        url: url
+      }, "*");
+    });
   }
 }
 

@@ -1,17 +1,20 @@
 "use strict";
 
-var DefaultViewer = require("./viewers/default/default.js");
 var ImgurViewer = require("./viewers/imgur/imgur.js");
-var ProductHuntViewer = require("./viewers/productHunt/productHunt.js");
+var OkCupidViewer = require("./viewers/okcupid/okcupid.js");
+var YCombinatorViewer = require("./viewers/ycombinator/ycombinator.js");
 
 window.addEventListener("message", receiveMessage, false);
 
 var hostNames = {
-  "www.producthunt.com": {
-    "/l": ProductHuntViewer
+  "www.okcupid.com": {
+    "/profile": OkCupidViewer
   },
   "imgur.com": {
     "/a": ImgurViewer
+  },
+  "news.ycombinator.com": {
+    "/item": YCombinatorViewer
   }
 };
 
@@ -25,8 +28,6 @@ function resolveViewer(a) {
       }
     }
   }
-
-  return DefaultViewer;
 }
 
 function receiveMessage(event) {
@@ -36,7 +37,13 @@ function receiveMessage(event) {
 
   var viewer = resolveViewer(a);
 
-  displayViewer(viewer, a);
+  event.source.postMessage({
+    hasViewer: !!viewer
+  }, event.origin);
+
+  if (viewer) {
+    displayViewer(viewer, a);
+  }
 }
 
 function displayViewer(viewer, a) {

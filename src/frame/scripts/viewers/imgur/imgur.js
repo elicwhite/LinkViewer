@@ -12,7 +12,7 @@ var ImgurViewer = ViewerBase.extend({
       url.href += "?gallery";
     }
 
-    Helpers.getPage(url)
+    Helpers.getPage(url.href)
       .then(function(page) {
 
         var titleElement = page.querySelector(".description h1");
