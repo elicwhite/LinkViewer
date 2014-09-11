@@ -1,0 +1,6 @@
+@mixin vertical-center {
+  display: flex;
+  align-content: flex-start;
+  justify-content: center;
+  align-items: center;
+}

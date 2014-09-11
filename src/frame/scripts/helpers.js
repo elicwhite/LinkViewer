@@ -26,7 +26,6 @@ function getURL(url) {
 
 function getJSON(url) {
   return getURL(url).then(function(request) {
-    debugger;
     return JSON.parse(request.responseText);
   });
 }

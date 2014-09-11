@@ -33,7 +33,7 @@ module.exports = function(grunt) {
       },
 
       extScss: {
-        files: ['ext-css.scss'],
+        files: ['src/ext-css.scss'],
         tasks: ['sass:ext']
       },
 

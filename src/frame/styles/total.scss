@@ -1,14 +1,15 @@
+@import "typography";
+@import "mixins";
+
 body, html {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 body {
   background-color: white;
-  font-family: sans-serif;
-  line-height: 150%;
-  font-size: 14px;
-  color: rgba(0,0,0,.87);
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 #content, #loading {
@@ -18,11 +19,7 @@ body {
   top: 10px;
   bottom: 10px;
   background-color: white;
-}
-
-.title {
-  font-size: 20px;
-  line-height: 150%;
+  overflow: hidden;
 }
 
 .hostName {
@@ -32,10 +29,7 @@ body {
 }
 
 #loading {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include vertical-center();
   transition: opacity 0s;
   opacity: 1;
 }
@@ -54,6 +48,7 @@ ul.imageList {
   overflow: hidden;
 
   .imageListItem {
+    list-style-type: none;
     float: left;
     margin-left: 10px;
 
@@ -62,7 +57,33 @@ ul.imageList {
     }
 
     img {
-      height: 80px;
+      height: 120px;
+      vertical-align: bottom;
+    }
+  }
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+#okcupid {
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  min-height: 100%;
+
+  .info {
+    flex: 1;
+    align-items: center;
+
+    .match {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      align-items: center;
     }
   }
 }

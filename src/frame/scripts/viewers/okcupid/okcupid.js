@@ -28,14 +28,17 @@ var OkCupidViewer = ViewerBase.extend({
 
         // Get smaller images
         urls.map(function(url) {
-          return url.split("160x160").join("100x100");
+          return url.split("160x160").join("120x120");
         });
 
 
 
         var params = {
           username: username,
-          urls: urls
+          urls: urls,
+          match: page.querySelector(".match .percent").textContent,
+          age: page.getElementById("ajax_age").textContent,
+          location: page.getElementById("ajax_location").textContent
         };
 
         self.applyTemplate(template(params));

@@ -1,8 +1,22 @@
-<span class="title">{{username}}</span>
-<ul class="images imageList">
-  {{#each urls}}
-  <li class="imageListItem">
-    <img src="{{this}}" />
-  </li>
-  {{/each}}
-</ul>
+<div id="okcupid">
+
+  <span class="title">{{username}}</span>
+  <ul class="images imageList">
+    {{#each urls}}
+    <li class="imageListItem">
+      <img src="{{this}}" />
+    </li>
+    {{/each}}
+  </ul>
+  <div class="flex info">
+
+    <div class="match">
+      <span class="percent title">{{match}}</span>
+      <span class="text">Match</span>
+    </div>
+
+    <div>
+      <span>{{age}} - {{location}}</span>
+    </div>
+  </div>
+</div>
