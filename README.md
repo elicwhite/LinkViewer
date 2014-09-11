@@ -24,7 +24,7 @@ If you are a developer, designer, writer, new to open source, or a seasoned vete
 As all open source projects say, documentation is incredibly important. We need to make sure the README is clear for developers to get started, and know how the code is structured.
 
 **Design**
-We have two weeks (probably less when you are reading this) to make a user friendly Chrome extension. That means it needs to be as beautiful and consistent as possible. Do you have ideas for the user experience for certain websites? Great! Do you want to help make the user experiences share design elements for different websites? Even better!
+We have two weeks (probably less when you are reading this) to make a user friendly Chrome extension. That means it needs to be as beautiful and consistent as possible. Do you have ideas for the user experience for certain websites? Great! Do you want to help make the user experiences share design elements for different websites? Even better! We also need assets for the Chrome store!
 
 **Development**
 The obvious one. So much development work needs to be done. Here are some features that come to mind and questions that need to be answered.
@@ -35,7 +35,6 @@ The obvious one. So much development work needs to be done. Here are some featur
  - Better Domain / Path matching
  - CSS and HTML elements the views can share to be consistent.
  - Once a url is routed to a viewer, what happens if the viewer can't display it?
- - A JSHint file
  - So much more.
 
 Contribute

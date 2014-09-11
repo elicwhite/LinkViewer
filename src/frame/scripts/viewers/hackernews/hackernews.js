@@ -13,7 +13,6 @@ var HackerNewsViewer = ViewerBase.extend({
     var api = "https://hn.algolia.com/api/v1/items/"+id;
 
     Helpers.getJSON(api).then(function(json) {
-      // debugger;
       var params = {
         title: json.title,
         url: json.url,
