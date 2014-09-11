@@ -68,22 +68,22 @@ ul.imageList {
   justify-content: space-around;
 }
 
-#okcupid {
+.info {
+  flex: 1;
+  align-items: center;
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+
+.viewWrapper {
   display: flex;
   flex-direction: column;
   max-height: 100%;
   min-height: 100%;
-
-  .info {
-    flex: 1;
-    align-items: center;
-
-    .match {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-
-      align-items: center;
-    }
-  }
 }

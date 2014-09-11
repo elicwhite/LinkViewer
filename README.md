@@ -5,7 +5,10 @@ LinkViewer is an extension for Chrome built as an open source experiment. LinkVi
 **Some examples:**
  - An Ebay Auction might show the name of the auction, image, current price, and time remaining.
  - An Imgur Album might show the first few images
+ ![Imgur](http://imgur.com/wWhgucW.png)
  - Hovering on the comments link on Reddit could show the top rated comment
+ - A HackerNews link might show some information about the post and the top comment
+ ![HackerNews](http://imgur.com/IaPv7t9.png)
 
 
 
@@ -48,3 +51,6 @@ In order to build a development version, follow the steps below
  6. Open Chrome and go to `Menu->Tools->Extensions` and tick the `Developer Mode` checkbox
  7. Choose `Load unpacked extension`
  8. Any time a file inside of `%ROOT%/src/frame` is modified you must go back to the `Menu->Tools->Extensions` page and `Reload` the extension.
+
+
+[![Analytics](https://ga-beacon.appspot.com/UA-54732104-2/LinkViewer/README)](https://github.com/TheSavior/LinkViewer)

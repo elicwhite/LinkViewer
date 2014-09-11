@@ -29,9 +29,15 @@
   line-height:26px;
 }
 
+.subtext {
+  font-size: 14px;
+  color: rgba(0,0,0,.54);
+  font-weight: 400;
+}
+
 body {
   @extend .body;
 
-  font-weight: 400;
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
 }

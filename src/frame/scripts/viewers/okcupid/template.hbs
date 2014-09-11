@@ -1,4 +1,4 @@
-<div id="okcupid">
+<div id="okcupid" class="viewWrapper" >
 
   <span class="title">{{username}}</span>
   <ul class="images imageList">
@@ -8,14 +8,15 @@
     </li>
     {{/each}}
   </ul>
+
   <div class="flex info">
 
-    <div class="match">
-      <span class="percent title">{{match}}</span>
+    <div class="section">
+      <span class="title">{{match}}</span>
       <span class="text">Match</span>
     </div>
 
-    <div>
+    <div class="section">
       <span>{{age}} - {{location}}</span>
     </div>
   </div>

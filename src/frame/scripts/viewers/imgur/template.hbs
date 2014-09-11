@@ -1,8 +1,23 @@
-<span class="title">Imgur!</span>
-<ul class="images imageList">
-  {{#each urls}}
-  <li class="imageListItem">
-    <img src="{{this}}" />
-  </li>
-  {{/each}}
-</ul>
+<div id="imgur" class="viewWrapper" >
+
+  <span class="title">{{title}}</span>
+  <ul class="images imageList">
+    {{#each urls}}
+    <li class="imageListItem">
+      <img src="{{this}}" />
+    </li>
+    {{/each}}
+  </ul>
+
+  <div class="flex info">
+
+    <div class="section">
+      <span class="title">{{views}}</span>
+      <span class="text">Views</span>
+    </div>
+
+    <div class="section">
+      <span>{{uploaded}} ago</span>
+    </div>
+  </div>
+</div>

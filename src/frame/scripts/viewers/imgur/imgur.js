@@ -23,20 +23,23 @@ var ImgurViewer = ViewerBase.extend({
 
         var images = page.getElementsByClassName("thumb-title");
 
-        for (var i = 0; i < Math.min(6, images.length); i++) {
+        for (var i = 0; i < Math.min(3, images.length); i++) {
           urls.push(url.protocol + "//" + images[i].dataset.src);
         }
+
+        var stats = page.querySelectorAll(".stats span");
+        var uploaded = new Date(stats[0].title);
+        var views = stats[1].textContent;
 
         var params = {
           title: title,
           urls: urls,
+          views: views,
+          uploaded: Helpers.stringifyTimestamp(uploaded)
         };
 
         self.applyTemplate(template(params));
       });
-
-    var t = template({});
-    this.applyTemplate(t);
   }
 
 });

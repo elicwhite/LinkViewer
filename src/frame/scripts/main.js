@@ -2,7 +2,7 @@
 
 var ImgurViewer = require("./viewers/imgur/imgur.js");
 var OkCupidViewer = require("./viewers/okcupid/okcupid.js");
-var YCombinatorViewer = require("./viewers/ycombinator/ycombinator.js");
+var HackerNewsViewer = require("./viewers/hackernews/hackernews.js");
 
 window.addEventListener("message", receiveMessage, false);
 
@@ -14,7 +14,7 @@ var hostNames = {
     "/a": ImgurViewer
   },
   "news.ycombinator.com": {
-    "/item": YCombinatorViewer
+    "/item": HackerNewsViewer
   }
 };
 

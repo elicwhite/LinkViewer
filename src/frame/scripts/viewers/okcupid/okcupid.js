@@ -12,10 +12,6 @@ var OkCupidViewer = ViewerBase.extend({
 
     var profileUrl = "https://www.okcupid.com/profile/"+username;
 
-
-
-    // debugger;
-
     Helpers.getPage(profileUrl)
       .then(function(page) {
 
