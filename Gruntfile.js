@@ -44,12 +44,12 @@ module.exports = function(grunt) {
 
       extJs: {
         files: 'src/ext.js',
-        tasks: ['copy:extJs']
+        tasks: ['jshint:extJs', 'copy:extJs']
       },
 
       frameJs: {
         files: ['src/frame/scripts/**/*.js', 'src/frame/scripts/**/*.hbs'],
-        tasks: ['browserify'],
+        tasks: ['jshint:frameJs', 'browserify'],
       },
 
       extManifest: {
@@ -75,6 +75,28 @@ module.exports = function(grunt) {
       }
     },
 
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc',
+      },
+
+      frameJs: {
+        options: {
+          ignores: ['src/frame/scripts/class.js']
+        },
+        src: ['src/frame/**/*.js']
+      },
+
+      extJs: {
+        options: {
+          globals: {
+            chrome: false
+          }
+        },
+        src: ['src/ext.js']
+      }
+    },
+
     browserify: {
       options: {
         debug: true,
@@ -91,5 +113,5 @@ module.exports = function(grunt) {
 
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('default', ['copy', 'sass', 'browserify', 'watch']);
+  grunt.registerTask('default', ['copy', 'sass', 'jshint', 'browserify', 'watch']);
 };

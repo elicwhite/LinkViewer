@@ -1,20 +1,18 @@
-"use strict";
+'use strict';
 
-var ImgurViewer = require("./viewers/imgur/imgur.js");
-var OkCupidViewer = require("./viewers/okcupid/okcupid.js");
-var HackerNewsViewer = require("./viewers/hackernews/hackernews.js");
-
-window.addEventListener("message", receiveMessage, false);
+var ImgurViewer = require('./viewers/imgur/imgur.js');
+var OkCupidViewer = require('./viewers/okcupid/okcupid.js');
+var HackerNewsViewer = require('./viewers/hackernews/hackernews.js');
 
 var hostNames = {
-  "www.okcupid.com": {
-    "/profile": OkCupidViewer
+  'www.okcupid.com': {
+    '/profile': OkCupidViewer
   },
-  "imgur.com": {
-    "/a": ImgurViewer
+  'imgur.com': {
+    '/a': ImgurViewer
   },
-  "news.ycombinator.com": {
-    "/item": HackerNewsViewer
+  'news.ycombinator.com': {
+    '/item': HackerNewsViewer
   }
 };
 
@@ -30,9 +28,16 @@ function resolveViewer(a) {
   }
 }
 
+function displayViewer(viewer, a) {
+  // Display loading
+  document.getElementById('loading').classList.remove('hidden');
+
+  viewer.show(a);
+}
+
 function receiveMessage(event) {
   var url = event.data.url;
-  var a = document.createElement("A");
+  var a = document.createElement('A');
   a.href = url;
 
   var viewer = resolveViewer(a);
@@ -46,9 +51,4 @@ function receiveMessage(event) {
   }
 }
 
-function displayViewer(viewer, a) {
-  // Display loading
-  document.getElementById("loading").classList.remove("hidden");
-
-  viewer.show(a);
-}
+window.addEventListener('message', receiveMessage, false);

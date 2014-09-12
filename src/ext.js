@@ -1,15 +1,15 @@
-"use strict";
+'use strict';
 
 function init() {
 
-  var frame = document.createElement("iframe");
-  frame.src = chrome.extension.getURL("frame/index.html");
-  frame.id = "qLinkPreview";
-  frame.scrolling = "no";
+  var frame = document.createElement('iframe');
+  frame.src = chrome.extension.getURL('frame/index.html');
+  frame.id = 'qLinkPreview';
+  frame.scrolling = 'no';
   frame.frameBorder = 0;
   document.body.appendChild(frame);
 
-  document.addEventListener("mouseover", function(e) {
+  document.addEventListener('mouseover', function(e) {
     var timer = null;
 
     // We want to resolve either this tag or a couple tags up the chain
@@ -17,12 +17,12 @@ function init() {
 
     function leaveListener() {
       if (timer === null) {
-        frame.classList.remove("visible");
+        frame.classList.remove('visible');
       } else {
         window.clearTimeout(timer);
       }
 
-      element.removeEventListener("mouseout", leaveListener);
+      element.removeEventListener('mouseout', leaveListener);
     }
 
     if (element && element.href) {
@@ -32,15 +32,15 @@ function init() {
           timer = null;
 
           // center the frame on the cursor
-          frame.style.left = (e.pageX + 50) + "px";
-          frame.style.top = (e.pageY - (250 / 2)) + "px";
+          frame.style.left = (e.pageX + 50) + 'px';
+          frame.style.top = (e.pageY - (250 / 2)) + 'px';
 
 
-          frame.classList.add("visible");
+          frame.classList.add('visible');
         });
       }, 500);
 
-      element.addEventListener("mouseout", leaveListener);
+      element.addEventListener('mouseout', leaveListener);
     }
   });
 
@@ -49,7 +49,7 @@ function init() {
       return false;
     }
 
-    if (element.tagName == "A") {
+    if (element.tagName == 'A') {
       return element;
     }
 
@@ -70,20 +70,20 @@ function init() {
           reject();
         }
 
-        window.removeEventListener("message", gotMessage);
+        window.removeEventListener('message', gotMessage);
       }
 
-      window.addEventListener("message", gotMessage);
+      window.addEventListener('message', gotMessage);
 
       frame.contentWindow.postMessage({
         url: url
-      }, "*");
+      }, '*');
     });
   }
 }
 
-if (document.readyState === "interactive" || document.readyState === "complete") {
+if (document.readyState === 'interactive' || document.readyState === 'complete') {
   init();
 } else {
-  document.addEventListener("DOMContentLoaded", init, false);
+  document.addEventListener('DOMContentLoaded', init, false);
 }

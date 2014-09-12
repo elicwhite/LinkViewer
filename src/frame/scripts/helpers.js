@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 function getURL(url) {
   return new Promise(function(resolve, reject) {
@@ -33,7 +33,7 @@ function getJSON(url) {
 function getPage(url) {
   return getURL(url).then(function(request) {
     var parser = new DOMParser();
-    var doc = parser.parseFromString(request.response, "text/html");
+    var doc = parser.parseFromString(request.response, 'text/html');
 
     return doc;
   });
@@ -53,31 +53,31 @@ function getQueryVariable(url, variable) {
 }
 
 function stringifyTimestamp(timestamp) {
-  var date = typeof(timestamp) == "object" ? timestamp : new Date(timestamp * 1000);
+  var date = typeof(timestamp) == 'object' ? timestamp : new Date(timestamp * 1000);
   var seconds = Math.floor((new Date() - date) / 1000);
 
   var interval = Math.floor(seconds / 31536000);
 
   if (interval > 1) {
-    return interval + " years";
+    return interval + ' years';
   }
   interval = Math.floor(seconds / 2592000);
   if (interval > 1) {
-    return interval + " months";
+    return interval + ' months';
   }
   interval = Math.floor(seconds / 86400);
   if (interval > 1) {
-    return interval + " days";
+    return interval + ' days';
   }
   interval = Math.floor(seconds / 3600);
   if (interval > 1) {
-    return interval + " hours";
+    return interval + ' hours';
   }
   interval = Math.floor(seconds / 60);
   if (interval > 1) {
-    return interval + " minutes";
+    return interval + ' minutes';
   }
-  return Math.floor(seconds) + " seconds";
+  return Math.floor(seconds) + ' seconds';
 }
 
 exports.getJSON = getJSON;
