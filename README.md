@@ -50,6 +50,7 @@ In order to build a development version, follow the steps below
  6. Open Chrome and go to `Menu->Tools->Extensions` and tick the `Developer Mode` checkbox
  7. Choose `Load unpacked extension`
  8. Any time a file inside of `%ROOT%/src/frame` is modified you must go back to the `Menu->Tools->Extensions` page and `Reload` the extension.
+ 9. Navigate your browser to http://localhost:8282 to view the tests/index.html file with the different views
 
 
 [![Analytics](https://ga-beacon.appspot.com/UA-54732104-2/LinkViewer/README)](https://github.com/TheSavior/LinkViewer)

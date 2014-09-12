@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function(grunt) {
 
   // Project configuration.
@@ -6,7 +8,7 @@ module.exports = function(grunt) {
 
     sass: {
       options: {
-        style: "expanded"
+        style: 'expanded'
       },
 
       frame: {
@@ -107,11 +109,22 @@ module.exports = function(grunt) {
         src:['src/frame/scripts/main.js', 'src/frame/scripts/**/*.hbs'],
         dest: 'build/frame/main.js'
       }
+    },
+
+    'http-server': {
+        tests: {
+            root: 'tests',
+            port: 8282,
+            host: 'localhost',
+            ext: 'html',
+
+            runInBackground: true
+        }
     }
 
   });
 
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('default', ['copy', 'sass', 'jshint', 'browserify', 'watch']);
+  grunt.registerTask('default', ['copy', 'sass', 'jshint', 'browserify', 'http-server', 'watch']);
 };
