@@ -1,15 +1,16 @@
 LinkViewer
 ==========
-LinkViewer is an extension for Chrome built as an open source experiment. LinkViewer enables you to see the most important information about a page without having to click on the link. Depending on what link it is that information could be different!
+LinkViewer is an extension for Chrome built as an open source experiment to build and launch a product on Product Hunt in two weeks.
+
+![Imgur](http://i.imgur.com/njZqGQa.gif)
+
+LinkViewer enables you to see the most important information about a page without having to click on the link. Depending on what link it is, that information could be different!
 
 **Some examples:**
  - An Ebay Auction might show the name of the auction, image, current price, and time remaining.
  - An Imgur Album might show the first few images
- ![Imgur](http://imgur.com/1H8Sjap.png)
  - Hovering on the comments link on Reddit could show the top rated comment
  - A HackerNews link might show some information about the post and the top comment
- ![HackerNews](http://imgur.com/c9ZbTO5.png)
-
 
 
 The Open Source Experiment
