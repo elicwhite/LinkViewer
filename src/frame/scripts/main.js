@@ -16,16 +16,50 @@ var hostNames = {
   }
 };
 
+
 function resolveViewer(a) {
   var paths = hostNames[a.hostname];
 
   if (paths) {
+    var urlPathArray = a.pathname.split('/');
+
     for (var path in paths) {
+      // Exact match?
       if (a.pathname.indexOf(path) === 0) {
         return paths[path];
       }
+      else
+      {
+        // not an exact match, lets try to match parts
+        var testPathArray = path.split('/');
+
+        // If we require more pieces than the url has
+        if (testPathArray.length > urlPathArray.length) {
+          continue;
+        }
+
+        var matches = true;
+
+        for (var i = 0; i < testPathArray.length; i++) {
+          // Asterisk matches all paths
+          if (testPathArray[i] == '*') {
+            continue;
+          }
+
+          if (testPathArray[i] != urlPathArray[i]) {
+            matches = false;
+            break;
+          }
+        }
+
+        if (matches) {
+          return paths[path];
+        }
+      }
     }
   }
+
+  return false;
 }
 
 function displayViewer(viewer, a) {
