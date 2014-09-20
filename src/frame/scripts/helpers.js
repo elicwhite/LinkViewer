@@ -24,6 +24,13 @@ function getURL(url) {
   });
 }
 
+function parsePageFromRequest(request) {
+  var parser = new DOMParser();
+  var doc = parser.parseFromString(request.response, 'text/html');
+
+  return doc;
+}
+
 function getJSON(url) {
   return getURL(url).then(function(request) {
     return JSON.parse(request.responseText);
@@ -31,12 +38,7 @@ function getJSON(url) {
 }
 
 function getPage(url) {
-  return getURL(url).then(function(request) {
-    var parser = new DOMParser();
-    var doc = parser.parseFromString(request.response, 'text/html');
-
-    return doc;
-  });
+  return getURL(url).then(parsePageFromRequest);
 }
 
 function getQueryVariable(url, variable) {
@@ -80,8 +82,11 @@ function stringifyTimestamp(timestamp) {
   return Math.floor(seconds) + ' seconds';
 }
 
-exports.getJSON = getJSON;
-exports.getPage = getPage;
-exports.getQueryVariable = getQueryVariable;
-exports.stringifyTimestamp = stringifyTimestamp;
-
+module.exports = {
+  getURL: getURL,
+  getJSON: getJSON,
+  getPage: getPage,
+  parsePageFromRequest: parsePageFromRequest,
+  getQueryVariable: getQueryVariable,
+  stringifyTimestamp: stringifyTimestamp
+};

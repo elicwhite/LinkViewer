@@ -3,13 +3,16 @@
     display: flex;
     align-items: center;
   }
-  div {
-    padding: 20px;
+
+  .non-link {
+    color: #aaa;
   }
   ul {
-    margin: 0;
-    padding: 0;
     list-style-type: none;
+  }
+
+  a, a:hover, a:link, a:active {
+    color: black;
   }
 </style>
 
@@ -18,5 +21,12 @@
     <li><a href="https://www.okcupid.com/profile/XXX">OkCupid Profile</a></li>
     <li><a href="http://imgur.com/a/yEYY6">Imgur Album</a></li>
     <li><a href="https://news.ycombinator.com/item?id=8302118">Hacker News Post</a></li>
+    <li><span class="non-link">Shorteners</span>
+      <ul>
+        <li><a href="http://bit.ly/1bdDlXc">Bit.ly</a></li>
+        <li><a href="http://tinyurl.com/mlub7wv">TinyURL</a></li>
+        <li><a href="http://goo.gl/i2jZpW">Goo.gl</a></li>
+      </ul>
+    </li>
   </ul>
 </div>

@@ -3,6 +3,7 @@
 var ImgurViewer = require('./viewers/imgur/imgur.js');
 var OkCupidViewer = require('./viewers/okcupid/okcupid.js');
 var HackerNewsViewer = require('./viewers/hackernews/hackernews.js');
+var ShortenerViewer = require('./viewers/shortener/shortener.js');
 
 var hostNames = {
   'www.okcupid.com': {
@@ -13,9 +14,17 @@ var hostNames = {
   },
   'news.ycombinator.com': {
     '/item': HackerNewsViewer
+  },
+  'bit.ly': {
+    '/*': ShortenerViewer
+  },
+  'tinyurl.com': {
+    '/*': ShortenerViewer
+  },
+  'goo.gl': {
+    '/*': ShortenerViewer
   }
 };
-
 
 function resolveViewer(a) {
   var paths = hostNames[a.hostname];
