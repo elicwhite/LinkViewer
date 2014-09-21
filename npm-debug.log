@@ -1,0 +1,276 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'sass' ]
+2 info using npm@1.4.23
+3 info using node@v0.10.31
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 warn package.json sass@0.5.0 No repository field.
+6 verbose readDependencies using package.json deps
+7 verbose cache add [ 'sass', null ]
+8 verbose cache add name=undefined spec="sass" args=["sass",null]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: 'sass',
+9 verbose parsed url   path: 'sass',
+9 verbose parsed url   href: 'sass' }
+10 silly lockFile 5d7463cd-sass sass
+11 verbose lock sass C:\Users\Edward\AppData\Roaming\npm-cache\5d7463cd-sass.lock
+12 silly lockFile 5d7463cd-sass sass
+13 silly lockFile 5d7463cd-sass sass
+14 verbose addNamed [ 'sass', '' ]
+15 verbose addNamed [ null, '*' ]
+16 silly lockFile abea0ec1-sass sass@
+17 verbose lock sass@ C:\Users\Edward\AppData\Roaming\npm-cache\abea0ec1-sass.lock
+18 silly addNameRange { name: 'sass', range: '*', hasData: false }
+19 verbose request where is /sass
+20 verbose request registry https://registry.npmjs.org/
+21 verbose request id e0bc5773a2e9ad04
+22 verbose url raw /sass
+23 verbose url resolving [ 'https://registry.npmjs.org/', './sass' ]
+24 verbose url resolved https://registry.npmjs.org/sass
+25 verbose request where is https://registry.npmjs.org/sass
+26 info trying registry request attempt 1 at 02:14:12
+27 verbose etag "8HETIHXPD5EPMW3E7ETV1FFSW"
+28 http GET https://registry.npmjs.org/sass
+29 http 304 https://registry.npmjs.org/sass
+30 silly registry.get cb [ 304,
+30 silly registry.get   { date: 'Sun, 21 Sep 2014 06:14:12 GMT',
+30 silly registry.get     server: 'Apache',
+30 silly registry.get     via: '1.1 varnish',
+30 silly registry.get     'last-modified': 'Sun, 21 Sep 2014 06:14:13 GMT',
+30 silly registry.get     'cache-control': 'max-age=60',
+30 silly registry.get     etag: '"8HETIHXPD5EPMW3E7ETV1FFSW"',
+30 silly registry.get     'x-served-by': 'cache-jfk1025-JFK',
+30 silly registry.get     'x-cache': 'MISS',
+30 silly registry.get     'x-cache-hits': '0',
+30 silly registry.get     'x-timer': 'S1411280052.984395,VS0,VE72',
+30 silly registry.get     vary: 'Accept',
+30 silly registry.get     'content-length': '0',
+30 silly registry.get     'keep-alive': 'timeout=10, max=50',
+30 silly registry.get     connection: 'Keep-Alive' } ]
+31 verbose etag https://registry.npmjs.org/sass from cache
+32 silly addNameRange number 2 { name: 'sass', range: '*', hasData: true }
+33 silly addNameRange versions [ 'sass', [ '0.4.0', '0.4.1', '0.4.2', '0.4.3', '0.5.0' ] ]
+34 verbose addNamed [ 'sass', '0.5.0' ]
+35 verbose addNamed [ '0.5.0', '0.5.0' ]
+36 silly lockFile 69745589-sass-0-5-0 sass@0.5.0
+37 verbose lock sass@0.5.0 C:\Users\Edward\AppData\Roaming\npm-cache\69745589-sass-0-5-0.lock
+38 silly lockFile 69745589-sass-0-5-0 sass@0.5.0
+39 silly lockFile 69745589-sass-0-5-0 sass@0.5.0
+40 silly lockFile abea0ec1-sass sass@
+41 silly lockFile abea0ec1-sass sass@
+42 silly resolved [ { name: 'sass',
+42 silly resolved     description: 'Syntactically Awesome Stylesheets (compiles to css)',
+42 silly resolved     version: '0.5.0',
+42 silly resolved     keywords: [ 'sass', 'template', 'css', 'view' ],
+42 silly resolved     author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+42 silly resolved     contributors: [ [Object] ],
+42 silly resolved     main: './lib/sass',
+42 silly resolved     _id: 'sass@0.5.0',
+42 silly resolved     engines: { node: '*' },
+42 silly resolved     _nodeSupported: true,
+42 silly resolved     _npmVersion: '0.2.7-2',
+42 silly resolved     _nodeVersion: 'v0.3.1-pre',
+42 silly resolved     dist:
+42 silly resolved      { tarball: 'http://registry.npmjs.org/sass/-/sass-0.5.0.tgz',
+42 silly resolved        shasum: '9dee1183a0f400361f2c5d3453bf2e54705e03f9' },
+42 silly resolved     directories: {},
+42 silly resolved     _shasum: '9dee1183a0f400361f2c5d3453bf2e54705e03f9',
+42 silly resolved     _from: 'sass@',
+42 silly resolved     _resolved: 'https://registry.npmjs.org/sass/-/sass-0.5.0.tgz',
+42 silly resolved     readme: 'ERROR: No README data found!' } ]
+43 info install sass@0.5.0 into C:\Users\Edward\Documents\Github\LinkViewer
+44 info installOne sass@0.5.0
+45 verbose node_modules\sass unbuild
+46 info preuninstall sass@0.5.0
+47 info uninstall sass@0.5.0
+48 verbose true,C:\Users\Edward\Documents\Github\LinkViewer\node_modules,C:\Users\Edward\Documents\Github\LinkViewer\node_modules unbuild sass@0.5.0
+49 info postuninstall sass@0.5.0
+50 verbose tar unpack C:\Users\Edward\AppData\Roaming\npm-cache\sass\0.5.0\package.tgz
+51 silly lockFile b0981bb2-hub-LinkViewer-node-modules-sass tar://C:\Users\Edward\Documents\Github\LinkViewer\node_modules\sass
+52 verbose lock tar://C:\Users\Edward\Documents\Github\LinkViewer\node_modules\sass C:\Users\Edward\AppData\Roaming\npm-cache\b0981bb2-hub-LinkViewer-node-modules-sass.lock
+53 silly lockFile 74fd2fcf-npm-cache-sass-0-5-0-package-tgz tar://C:\Users\Edward\AppData\Roaming\npm-cache\sass\0.5.0\package.tgz
+54 verbose lock tar://C:\Users\Edward\AppData\Roaming\npm-cache\sass\0.5.0\package.tgz C:\Users\Edward\AppData\Roaming\npm-cache\74fd2fcf-npm-cache-sass-0-5-0-package-tgz.lock
+55 silly gunzTarPerm modes [ '777', '666' ]
+56 silly gunzTarPerm extractEntry
+57 silly gunzTarPerm modified mode [ '', 493, 511 ]
+58 silly gunzTarPerm extractEntry .gitignore
+59 silly gunzTarPerm modified mode [ '.gitignore', 420, 438 ]
+60 silly gunzTarPerm extractEntry ._History.md
+61 silly gunzTarPerm modified mode [ '._History.md', 420, 438 ]
+62 silly gunzTarPerm extractEntry History.md
+63 silly gunzTarPerm modified mode [ 'History.md', 420, 438 ]
+64 silly gunzTarPerm extractEntry index.js
+65 silly gunzTarPerm modified mode [ 'index.js', 493, 511 ]
+66 silly gunzTarPerm extractEntry lib/
+67 silly gunzTarPerm modified mode [ 'lib/', 493, 511 ]
+68 silly gunzTarPerm extractEntry Makefile
+69 silly gunzTarPerm modified mode [ 'Makefile', 420, 438 ]
+70 silly gunzTarPerm extractEntry ._package.json
+71 silly gunzTarPerm modified mode [ '._package.json', 420, 438 ]
+72 silly gunzTarPerm extractEntry package.json
+73 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+74 silly gunzTarPerm extractEntry ._Readme.md
+75 silly gunzTarPerm modified mode [ '._Readme.md', 420, 438 ]
+76 warn excluding symbolic link index.js -> lib/sass.js
+77 silly gunzTarPerm extractEntry Readme.md
+78 silly gunzTarPerm modified mode [ 'Readme.md', 420, 438 ]
+79 silly gunzTarPerm extractEntry spec/
+80 silly gunzTarPerm modified mode [ 'spec/', 493, 511 ]
+81 silly gunzTarPerm extractEntry spec/fixtures/
+82 silly gunzTarPerm modified mode [ 'spec/fixtures/', 493, 511 ]
+83 silly gunzTarPerm extractEntry spec/lib/
+84 silly gunzTarPerm modified mode [ 'spec/lib/', 493, 511 ]
+85 silly gunzTarPerm extractEntry spec/node.js
+86 silly gunzTarPerm modified mode [ 'spec/node.js', 420, 438 ]
+87 silly gunzTarPerm extractEntry spec/spec.core.js
+88 silly gunzTarPerm modified mode [ 'spec/spec.core.js', 420, 438 ]
+89 silly gunzTarPerm extractEntry spec/lib/images/
+90 silly gunzTarPerm modified mode [ 'spec/lib/images/', 493, 511 ]
+91 silly gunzTarPerm extractEntry spec/lib/jspec.css
+92 silly gunzTarPerm modified mode [ 'spec/lib/jspec.css', 420, 438 ]
+93 silly gunzTarPerm extractEntry spec/lib/jspec.growl.js
+94 silly gunzTarPerm modified mode [ 'spec/lib/jspec.growl.js', 420, 438 ]
+95 silly gunzTarPerm extractEntry spec/lib/jspec.jquery.js
+96 silly gunzTarPerm modified mode [ 'spec/lib/jspec.jquery.js', 420, 438 ]
+97 silly gunzTarPerm extractEntry spec/lib/jspec.js
+98 silly gunzTarPerm modified mode [ 'spec/lib/jspec.js', 420, 438 ]
+99 silly gunzTarPerm extractEntry spec/lib/jspec.nodejs.js
+100 silly gunzTarPerm modified mode [ 'spec/lib/jspec.nodejs.js', 420, 438 ]
+101 silly gunzTarPerm extractEntry spec/lib/jspec.shell.js
+102 silly gunzTarPerm modified mode [ 'spec/lib/jspec.shell.js', 420, 438 ]
+103 silly gunzTarPerm extractEntry spec/lib/jspec.timers.js
+104 silly gunzTarPerm modified mode [ 'spec/lib/jspec.timers.js', 420, 438 ]
+105 silly gunzTarPerm extractEntry spec/lib/jspec.xhr.js
+106 silly gunzTarPerm modified mode [ 'spec/lib/jspec.xhr.js', 420, 438 ]
+107 silly gunzTarPerm extractEntry spec/lib/images/bg.png
+108 silly gunzTarPerm modified mode [ 'spec/lib/images/bg.png', 420, 438 ]
+109 silly gunzTarPerm extractEntry spec/lib/images/hr.png
+110 silly gunzTarPerm modified mode [ 'spec/lib/images/hr.png', 420, 438 ]
+111 silly gunzTarPerm extractEntry spec/lib/images/loading.gif
+112 silly gunzTarPerm modified mode [ 'spec/lib/images/loading.gif', 420, 438 ]
+113 silly gunzTarPerm extractEntry spec/lib/images/sprites.bg.png
+114 silly gunzTarPerm modified mode [ 'spec/lib/images/sprites.bg.png', 420, 438 ]
+115 silly gunzTarPerm extractEntry spec/lib/images/sprites.png
+116 silly gunzTarPerm modified mode [ 'spec/lib/images/sprites.png', 420, 438 ]
+117 silly gunzTarPerm extractEntry spec/lib/images/vr.png
+118 silly gunzTarPerm modified mode [ 'spec/lib/images/vr.png', 420, 438 ]
+119 silly gunzTarPerm extractEntry spec/fixtures/collect.sass
+120 silly gunzTarPerm modified mode [ 'spec/fixtures/collect.sass', 420, 438 ]
+121 silly gunzTarPerm extractEntry spec/fixtures/._comment.css
+122 silly gunzTarPerm modified mode [ 'spec/fixtures/._comment.css', 420, 438 ]
+123 silly gunzTarPerm extractEntry spec/fixtures/comment.css
+124 silly gunzTarPerm modified mode [ 'spec/fixtures/comment.css', 420, 438 ]
+125 silly gunzTarPerm extractEntry spec/fixtures/._comment.sass
+126 silly gunzTarPerm modified mode [ 'spec/fixtures/._comment.sass', 420, 438 ]
+127 silly gunzTarPerm extractEntry spec/fixtures/comment.sass
+128 silly gunzTarPerm modified mode [ 'spec/fixtures/comment.sass', 420, 438 ]
+129 silly gunzTarPerm extractEntry spec/fixtures/continuation.css
+130 silly gunzTarPerm modified mode [ 'spec/fixtures/continuation.css', 420, 438 ]
+131 silly gunzTarPerm extractEntry spec/fixtures/continuation.sass
+132 silly gunzTarPerm modified mode [ 'spec/fixtures/continuation.sass', 420, 438 ]
+133 silly gunzTarPerm extractEntry spec/fixtures/literal.css
+134 silly gunzTarPerm modified mode [ 'spec/fixtures/literal.css', 420, 438 ]
+135 silly gunzTarPerm extractEntry spec/fixtures/._literal.sass
+136 silly gunzTarPerm modified mode [ 'spec/fixtures/._literal.sass', 420, 438 ]
+137 silly gunzTarPerm extractEntry spec/fixtures/literal.sass
+138 silly gunzTarPerm modified mode [ 'spec/fixtures/literal.sass', 420, 438 ]
+139 silly gunzTarPerm extractEntry spec/fixtures/mixin.css
+140 silly gunzTarPerm modified mode [ 'spec/fixtures/mixin.css', 420, 438 ]
+141 silly gunzTarPerm extractEntry spec/fixtures/mixin.multiple.css
+142 silly gunzTarPerm modified mode [ 'spec/fixtures/mixin.multiple.css', 420, 438 ]
+143 silly gunzTarPerm extractEntry spec/fixtures/mixin.multiple.sass
+144 silly gunzTarPerm modified mode [ 'spec/fixtures/mixin.multiple.sass', 420, 438 ]
+145 silly gunzTarPerm extractEntry spec/fixtures/._mixin.sass
+146 silly gunzTarPerm modified mode [ 'spec/fixtures/._mixin.sass', 420, 438 ]
+147 silly gunzTarPerm extractEntry spec/fixtures/mixin.sass
+148 silly gunzTarPerm modified mode [ 'spec/fixtures/mixin.sass', 420, 438 ]
+149 silly gunzTarPerm extractEntry spec/fixtures/mixin.undefined.sass
+150 silly gunzTarPerm modified mode [ 'spec/fixtures/mixin.undefined.sass', 420, 438 ]
+151 silly gunzTarPerm extractEntry spec/fixtures/properties.css
+152 silly gunzTarPerm modified mode [ 'spec/fixtures/properties.css', 420, 438 ]
+153 silly gunzTarPerm extractEntry spec/fixtures/properties.expand.css
+154 silly gunzTarPerm modified mode [ 'spec/fixtures/properties.expand.css', 420, 438 ]
+155 silly gunzTarPerm extractEntry spec/fixtures/properties.expand.sass
+156 silly gunzTarPerm modified mode [ 'spec/fixtures/properties.expand.sass', 420, 438 ]
+157 silly gunzTarPerm extractEntry spec/fixtures/._properties.invalid.sass
+158 silly gunzTarPerm modified mode [ 'spec/fixtures/._properties.invalid.sass', 420, 438 ]
+159 silly gunzTarPerm extractEntry spec/fixtures/properties.invalid.sass
+160 silly gunzTarPerm modified mode [ 'spec/fixtures/properties.invalid.sass', 420, 438 ]
+161 silly gunzTarPerm extractEntry spec/fixtures/._properties.nested.css
+162 silly gunzTarPerm modified mode [ 'spec/fixtures/._properties.nested.css', 420, 438 ]
+163 silly gunzTarPerm extractEntry spec/fixtures/properties.nested.css
+164 silly gunzTarPerm modified mode [ 'spec/fixtures/properties.nested.css', 420, 438 ]
+165 silly gunzTarPerm extractEntry spec/fixtures/properties.nested.invalid.sass
+166 silly gunzTarPerm modified mode [ 'spec/fixtures/properties.nested.invalid.sass', 420, 438 ]
+167 silly gunzTarPerm extractEntry spec/fixtures/._properties.nested.sass
+168 silly gunzTarPerm modified mode [ 'spec/fixtures/._properties.nested.sass', 420, 438 ]
+169 silly gunzTarPerm extractEntry spec/fixtures/properties.nested.sass
+170 silly gunzTarPerm modified mode [ 'spec/fixtures/properties.nested.sass', 420, 438 ]
+171 silly gunzTarPerm extractEntry spec/fixtures/properties.sass
+172 silly gunzTarPerm modified mode [ 'spec/fixtures/properties.sass', 420, 438 ]
+173 silly gunzTarPerm extractEntry spec/fixtures/selectors.css
+174 silly gunzTarPerm modified mode [ 'spec/fixtures/selectors.css', 420, 438 ]
+175 silly gunzTarPerm extractEntry spec/fixtures/selectors.sass
+176 silly gunzTarPerm modified mode [ 'spec/fixtures/selectors.sass', 420, 438 ]
+177 silly gunzTarPerm extractEntry spec/fixtures/variables.alternate.css
+178 silly gunzTarPerm modified mode [ 'spec/fixtures/variables.alternate.css', 420, 438 ]
+179 silly gunzTarPerm extractEntry spec/fixtures/variables.alternate.sass
+180 silly gunzTarPerm modified mode [ 'spec/fixtures/variables.alternate.sass', 420, 438 ]
+181 silly gunzTarPerm extractEntry spec/fixtures/variables.css
+182 silly gunzTarPerm modified mode [ 'spec/fixtures/variables.css', 420, 438 ]
+183 silly gunzTarPerm extractEntry spec/fixtures/variables.dependent.css
+184 silly gunzTarPerm modified mode [ 'spec/fixtures/variables.dependent.css', 420, 438 ]
+185 silly gunzTarPerm extractEntry spec/fixtures/variables.dependent.sass
+186 silly gunzTarPerm modified mode [ 'spec/fixtures/variables.dependent.sass', 420, 438 ]
+187 silly gunzTarPerm extractEntry spec/fixtures/variables.regular.css
+188 silly gunzTarPerm modified mode [ 'spec/fixtures/variables.regular.css', 420, 438 ]
+189 silly gunzTarPerm extractEntry spec/fixtures/variables.regular.sass
+190 silly gunzTarPerm modified mode [ 'spec/fixtures/variables.regular.sass', 420, 438 ]
+191 silly gunzTarPerm extractEntry spec/fixtures/variables.sass
+192 silly gunzTarPerm modified mode [ 'spec/fixtures/variables.sass', 420, 438 ]
+193 silly gunzTarPerm extractEntry lib/index.js
+194 silly gunzTarPerm modified mode [ 'lib/index.js', 493, 511 ]
+195 silly gunzTarPerm extractEntry lib/._sass.js
+196 silly gunzTarPerm modified mode [ 'lib/._sass.js', 420, 438 ]
+197 silly gunzTarPerm extractEntry lib/sass.js
+198 silly gunzTarPerm modified mode [ 'lib/sass.js', 420, 438 ]
+199 warn excluding symbolic link lib\index.js -> sass.js
+200 silly lockFile b0981bb2-hub-LinkViewer-node-modules-sass tar://C:\Users\Edward\Documents\Github\LinkViewer\node_modules\sass
+201 silly lockFile b0981bb2-hub-LinkViewer-node-modules-sass tar://C:\Users\Edward\Documents\Github\LinkViewer\node_modules\sass
+202 silly lockFile 74fd2fcf-npm-cache-sass-0-5-0-package-tgz tar://C:\Users\Edward\AppData\Roaming\npm-cache\sass\0.5.0\package.tgz
+203 silly lockFile 74fd2fcf-npm-cache-sass-0-5-0-package-tgz tar://C:\Users\Edward\AppData\Roaming\npm-cache\sass\0.5.0\package.tgz
+204 info preinstall sass@0.5.0
+205 verbose readDependencies using package.json deps
+206 verbose readDependencies using package.json deps
+207 silly resolved []
+208 verbose about to build C:\Users\Edward\Documents\Github\LinkViewer\node_modules\sass
+209 info build C:\Users\Edward\Documents\Github\LinkViewer\node_modules\sass
+210 verbose linkStuff [ false,
+210 verbose linkStuff   false,
+210 verbose linkStuff   false,
+210 verbose linkStuff   'C:\\Users\\Edward\\Documents\\Github\\LinkViewer\\node_modules' ]
+211 info linkStuff sass@0.5.0
+212 verbose linkBins sass@0.5.0
+213 verbose linkMans sass@0.5.0
+214 verbose rebuildBundles sass@0.5.0
+215 info install sass@0.5.0
+216 info postinstall sass@0.5.0
+217 error peerinvalid The package grunt-contrib-sass does not satisfy its siblings' peerDependencies requirements!
+217 error peerinvalid Peer grunt-contrib@0.11.0 wants grunt-contrib-sass@~0.7.0
+218 error System Windows_NT 6.2.9200
+219 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "sass"
+220 error cwd C:\Users\Edward\Documents\Github\LinkViewer
+221 error node -v v0.10.31
+222 error npm -v 1.4.23
+223 error code EPEERINVALID
+224 verbose exit [ 1, true ]

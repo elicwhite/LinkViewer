@@ -4,6 +4,7 @@ var ImgurViewer = require('./viewers/imgur/imgur.js');
 var OkCupidViewer = require('./viewers/okcupid/okcupid.js');
 var HackerNewsViewer = require('./viewers/hackernews/hackernews.js');
 var ShortenerViewer = require('./viewers/shortener/shortener.js');
+var YoutubeViewer = require('./viewers/youtube/youtube.js');
 
 var hostNames = {
   'www.okcupid.com': {
@@ -14,6 +15,9 @@ var hostNames = {
   },
   'news.ycombinator.com': {
     '/item': HackerNewsViewer
+  },
+  'www.youtube.com': {
+    '/a':YoutubeViewer
   },
   'bit.ly': {
     '/*': ShortenerViewer
