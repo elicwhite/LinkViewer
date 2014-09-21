@@ -21,12 +21,10 @@ var HackerNewsViewer = ViewerBase.extend({
         author: json.author,
         createdAt: Helpers.stringifyTimestamp(json.created_at_i)
       };
-
       self.applyTemplate(template(params));
     });
   }
 
 });
-
 
 module.exports = new HackerNewsViewer();
