@@ -38,7 +38,8 @@ var OkCupidViewer = ViewerBase.extend({
         };
 
         self.applyTemplate(template(params));
-      });
+      })
+      .catch(self.handleErrors);
   }
 
 });

@@ -22,7 +22,8 @@ var ShortenerViewer = ViewerBase.extend({
         };
 
         self.applyTemplate(template(params));
-      });
+      })
+      .catch(self.handleErrors);
   }
 
 });
