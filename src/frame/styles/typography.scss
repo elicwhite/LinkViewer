@@ -35,6 +35,20 @@
   font-weight: 400;
 }
 
+.minitext {
+  font-size: 11px;
+  color: rgba(0,0,0,.54);
+  line-height: 11px;
+}
+
+.thumbnail {
+  img{
+    height:90px;
+    width:140px;
+    border:0px solid #4682b4;
+  }
+}
+
 body {
   @extend .body;
 

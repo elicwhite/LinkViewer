@@ -16,7 +16,7 @@ var hostNames = {
   'news.ycombinator.com': {
     '/item': HackerNewsViewer
   },
-  'youtube.com': {
+  'www.youtube.com': {
     '/watch':YoutubeViewer
   },
   'bit.ly': {
