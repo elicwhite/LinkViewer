@@ -10,7 +10,7 @@ var YoutubeViewer = ViewerBase.extend({
 
     var id = Helpers.getQueryVariable(url, 'v');
 
-    var api = 'http://gdata.youtube.com/feeds/api/videos/' + id +  '?v=2&amp;alt=jsonc';//-in-script&amp;callback=";
+    var api = 'http://gdata.youtube.com/feeds/api/videos/' + id + '?v=2&amp;alt=jsonc';//-in-script&amp;callback=";
 
     Helpers.getJSON(api).then(function(json) {
       /*jshint camelcase: false */

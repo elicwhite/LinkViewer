@@ -16,8 +16,8 @@ var hostNames = {
   'news.ycombinator.com': {
     '/item': HackerNewsViewer
   },
-  'www.youtube.com': {
-    '/a':YoutubeViewer
+  'youtube.com': {
+    '/watch':YoutubeViewer
   },
   'bit.ly': {
     '/*': ShortenerViewer
@@ -35,7 +35,6 @@ function resolveViewer(a) {
 
   if (paths) {
     var urlPathArray = a.pathname.split('/');
-
     for (var path in paths) {
       // Exact match?
       if (a.pathname.indexOf(path) === 0) {

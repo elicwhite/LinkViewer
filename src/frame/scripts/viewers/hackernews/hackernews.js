@@ -19,7 +19,7 @@ var HackerNewsViewer = ViewerBase.extend({
         url: json.url,
         points: json.points,
         author: json.author,
-        createdAt: Helpers.stringifyTimestampDes(json.created_at_i)
+        createdAt: Helpers.stringifyTimestamp(json.created_at_i)
       };
       self.applyTemplate(template(params));
     });
