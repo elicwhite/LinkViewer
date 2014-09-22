@@ -26,9 +26,9 @@ var HackerNewsViewer = ViewerBase.extend({
         self.applyTemplate(template(params));
       })
       .catch(self.handleErrors);
+
   }
 
 });
-
 
 module.exports = new HackerNewsViewer();
