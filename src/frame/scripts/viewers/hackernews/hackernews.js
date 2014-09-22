@@ -9,7 +9,7 @@ var HackerNewsViewer = ViewerBase.extend({
     var self = this;
 
     var id = Helpers.getQueryVariable(url, 'id');
-    
+
     var api = 'https://hn.algolia.com/api/v1/items/' + id;
 
     Helpers.getJSON(api)
@@ -26,21 +26,7 @@ var HackerNewsViewer = ViewerBase.extend({
         self.applyTemplate(template(params));
       })
       .catch(self.handleErrors);
-=======
-    var api = 'https://hn.algolia.com/api/v1/items/'+id;
 
-    Helpers.getJSON(api).then(function(json) {
-      /*jshint camelcase: false */
-      var params = {
-        title: json.title,
-        url: json.url,
-        points: json.points,
-        author: json.author,
-        createdAt: Helpers.stringifyTimestamp(json.created_at_i)
-      };
-      self.applyTemplate(template(params));
-    });
->>>>>>> origin/master
   }
 
 });
