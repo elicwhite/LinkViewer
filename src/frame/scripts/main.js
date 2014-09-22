@@ -35,7 +35,6 @@ function resolveViewer(a) {
 
   if (paths) {
     var urlPathArray = a.pathname.split('/');
-
     for (var path in paths) {
       // Exact match?
       if (a.pathname.indexOf(path) === 0) {
