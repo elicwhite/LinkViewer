@@ -35,6 +35,12 @@
   font-weight: 400;
 }
 
+.minitext {
+  font-size: 11px;
+  color: rgba(0,0,0,.54);
+  line-height: 11px;
+}
+
 body {
   @extend .body;
 
