@@ -80,7 +80,6 @@ ul.imageList {
   }
 }
 
-
 .viewWrapper {
   display: flex;
   flex-direction: column;
@@ -89,9 +88,12 @@ ul.imageList {
 }
 
 .thumbnail {
+  text-align: center;
+
   img{
     height:90px;
     width:140px;
     border:0px solid #4682b4;
+    vertical-align: bottom;
   }
 }
