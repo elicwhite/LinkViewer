@@ -55,7 +55,7 @@ function getQueryVariable(url, variable) {
 }
 
 function stringifyTimestamp(timestamp) {
-  var date = typeof(timestamp) == 'object' ? timestamp : new Date(timestamp * 1000);
+  var date = typeof timestamp == 'object' ? timestamp : new Date(timestamp * 1000);
   var seconds = Math.floor((new Date() - date) / 1000);
 
   var interval = Math.floor(seconds / 31536000);

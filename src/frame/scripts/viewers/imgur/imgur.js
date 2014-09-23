@@ -18,7 +18,6 @@ var ImgurViewer = ViewerBase.extend({
         var titleElement = page.querySelector('.description h1');
         var title = titleElement ? titleElement.textContent : '';
 
-
         var urls = [];
 
         var images = page.getElementsByClassName('thumb-title');
@@ -42,8 +41,6 @@ var ImgurViewer = ViewerBase.extend({
       })
       .catch(self.handleErrors);
   }
-
 });
-
 
 module.exports = new ImgurViewer();

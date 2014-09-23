@@ -14,7 +14,8 @@ var HackerNewsViewer = ViewerBase.extend({
 
     Helpers.getJSON(api)
       .then(function(json) {
-        /*jshint camelcase: false */
+        // jshint camelcase: false
+        // jscs:disable requireCamelCaseOrUpperCaseIdentifiers
         var params = {
           title: json.title,
           url: json.url,
@@ -22,13 +23,13 @@ var HackerNewsViewer = ViewerBase.extend({
           author: json.author,
           createdAt: Helpers.stringifyTimestamp(json.created_at_i)
         };
+        // jscs:enable requireCamelCaseOrUpperCaseIdentifiers
+        // jshint camelcase: true
 
         self.applyTemplate(template(params));
       })
       .catch(self.handleErrors);
   }
-
 });
-
 
 module.exports = new HackerNewsViewer();

@@ -35,7 +35,6 @@ function init() {
           frame.style.left = (e.pageX + 50) + 'px';
           frame.style.top = (e.pageY - (250 / 2)) + 'px';
 
-
           frame.classList.add('visible');
         });
       }, 500);

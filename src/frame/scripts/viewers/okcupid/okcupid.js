@@ -10,7 +10,7 @@ var OkCupidViewer = ViewerBase.extend({
 
     var username = url.pathname.split('/')[2];
 
-    var profileUrl = 'https://www.okcupid.com/profile/'+username;
+    var profileUrl = 'https://www.okcupid.com/profile/' + username;
 
     Helpers.getPage(profileUrl)
       .then(function(page) {
@@ -27,8 +27,6 @@ var OkCupidViewer = ViewerBase.extend({
           return url.split('160x160').join('120x120');
         });
 
-
-
         var params = {
           username: username,
           urls: urls,
@@ -41,8 +39,6 @@ var OkCupidViewer = ViewerBase.extend({
       })
       .catch(self.handleErrors);
   }
-
 });
-
 
 module.exports = new OkCupidViewer();

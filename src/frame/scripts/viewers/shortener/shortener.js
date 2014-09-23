@@ -25,8 +25,6 @@ var ShortenerViewer = ViewerBase.extend({
       })
       .catch(self.handleErrors);
   }
-
 });
-
 
 module.exports = new ShortenerViewer();

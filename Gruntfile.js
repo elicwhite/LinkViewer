@@ -13,13 +13,13 @@ module.exports = function(grunt) {
 
       frame: {
         files: [{
-          'build/frame/total.css': 'src/frame/styles/total.scss',
+          'build/frame/total.css': 'src/frame/styles/total.scss'
         }]
       },
 
       ext: {
         files: [{
-          'build/ext-css.css': 'src/ext-css.scss',
+          'build/ext-css.css': 'src/ext-css.scss'
         }]
       }
     },
@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 
       frameScss: {
         files: ['src/frame/styles/**/*.scss'],
-        tasks: ['sass:frame'],
+        tasks: ['sass:frame']
       },
 
       extScss: {
@@ -46,12 +46,12 @@ module.exports = function(grunt) {
 
       extJs: {
         files: 'src/ext.js',
-        tasks: ['jshint:extJs', 'copy:extJs']
+        tasks: ['jscs:extJs', 'jshint:extJs', 'copy:extJs']
       },
 
       frameJs: {
         files: ['src/frame/scripts/**/*.js', 'src/frame/scripts/**/*.hbs'],
-        tasks: ['jshint:frameJs', 'browserify'],
+        tasks: ['jscs:frameJs', 'jshint:frameJs', 'browserify']
       },
 
       extManifest: {
@@ -79,7 +79,7 @@ module.exports = function(grunt) {
 
     jshint: {
       options: {
-        jshintrc: '.jshintrc',
+        jshintrc: '.jshintrc'
       },
 
       frameJs: {
@@ -99,6 +99,23 @@ module.exports = function(grunt) {
       }
     },
 
+    jscs: {
+      options: {
+        config: '.jscsrc'
+      },
+
+      frameJs: {
+        options: {
+          excludeFiles: ['src/frame/scripts/class.js']
+        },
+        src: ['src/frame/**/*.js']
+      },
+
+      extJs: {
+        src: ['src/ext.js']
+      }
+    },
+
     browserify: {
       options: {
         debug: true,
@@ -106,25 +123,25 @@ module.exports = function(grunt) {
       },
 
       dev: {
-        src:['src/frame/scripts/main.js', 'src/frame/scripts/**/*.hbs'],
+        src: ['src/frame/scripts/main.js', 'src/frame/scripts/**/*.hbs'],
         dest: 'build/frame/main.js'
       }
     },
 
     'http-server': {
-        tests: {
-            root: 'tests',
-            port: 8282,
-            host: 'localhost',
-            ext: 'html',
+      tests: {
+        root: 'tests',
+        port: 8282,
+        host: 'localhost',
+        ext: 'html',
 
-            runInBackground: true
-        }
+        runInBackground: true
+      }
     }
 
   });
 
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('default', ['copy', 'sass', 'jshint', 'browserify', 'http-server', 'watch']);
+  grunt.registerTask('default', ['copy', 'sass', 'jscs', 'jshint', 'browserify', 'http-server', 'watch']);
 };
