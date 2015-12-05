@@ -1,5 +1,6 @@
 @import "typography";
 @import "mixins";
+@import "loader";
 
 body, html {
   margin: 0;
@@ -32,6 +33,11 @@ body {
   @include vertical-center();
   transition: opacity 0s;
   opacity: 1;
+}
+
+#loading span {
+  display: block;
+  margin-top: 70px;
 }
 
 #loading.hidden {
